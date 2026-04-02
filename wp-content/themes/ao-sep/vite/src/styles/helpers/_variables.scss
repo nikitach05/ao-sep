@@ -3,10 +3,11 @@
     --primary: #203b7a;
     --accent: #203b7a;
     --text: #111827;
-    --text-gray: #6b6b6b;
     --white: white;
     --light: #f6f6f6;
     --gray: #c4c4c4;
+    --gray-100: #b8b8b8;
+    --text-gray: #6b6b6b;
     --border: #d4d4d4;
     --error: #B4241A;
     
@@ -24,8 +25,8 @@
 }
 
 // Indent
-$min-indent: r(30);
-$max-indent: r(60);
+$min-indent: r(80);
+$max-indent: r(120);
 
 // Container
 $container-gap: r(15);
