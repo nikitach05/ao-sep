@@ -1,0 +1,45 @@
+.title {
+    position: relative;
+    display: inline-block;
+
+    h1,
+    h2 {
+        display: inline-block;
+        font-weight: var(--semibold);
+        font-size: slamp(r(24), r(54));
+        line-height: 120%;
+        hyphens: manual;
+    }
+}
+
+.input,
+.textarea {
+    display: block;
+    width: 100%;
+    padding: r(12);
+    outline: none;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    @include font();
+    color: var(--text);
+    background: var(--white);
+    box-shadow: none;
+
+    &::placeholder {
+        color: var(--gray);
+    }
+
+    &.error:not(&:focus) {
+        color: var(--error);
+        border-color: var(--error);
+
+        &::placeholder {
+            color: var(--error);
+        }
+    }
+}
+
+.textarea {
+    min-height: 16rem;
+    resize: none;
+}

@@ -1,0 +1,22 @@
+img-comparison-slider {
+    visibility: hidden;
+    outline: none;
+    border-radius: r(24);
+
+    img[slot='first'], img[slot='second'] {
+        object-fit: cover;
+        height: slamp(r(200), r(354));
+    }
+}
+
+img-comparison-slider [slot='second'] {
+    display: none;
+}
+
+img-comparison-slider.rendered {
+    visibility: inherit;
+}
+
+img-comparison-slider.rendered [slot='second'] {
+    display: unset;
+}

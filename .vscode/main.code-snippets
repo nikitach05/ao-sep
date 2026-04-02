@@ -1,0 +1,284 @@
+{
+  "Section": {
+    "prefix": "sec",
+    "body": [
+      "<section class=\"$0 p-indent\">",
+      "    <div class=\"container\"></div>",
+      "</section>"
+    ]
+  },
+  "Swiper": {
+    "prefix": "swiper",
+    "body": [
+        "<div class=\"slider\">",
+        "    <div class=\"swiper-arrows-prev\"></div>",
+        "    <div class=\"swiper-arrows-next\"></div>",
+        "    <div class=\"swiper\">",
+        "        <div class=\"swiper-wrapper\">",
+        "            <div class=\"swiper-slide\">",
+        "                <div class=\"swiper-lazy-preloader\"></div>",
+        "            </div>",
+        "        </div>",
+        "    </div>",
+        "    <div class=\"swiper-pagination\"></div>",
+        "</div>"
+    ]
+  },
+  "Modal": {
+    "prefix": "modal",
+    "body": [
+        "<div class=\"modal\" id=\"\">",
+        "   <div class=\"modal__wrapper\">",
+        "       <div class=\"modal__close\" data-modal-close></div>",
+        "       <div class=\"modal__content\">",
+        "       </div>",
+        "   </div>",
+        "</div>"
+    ]
+  },
+  "Nj-layout": {
+    "prefix": "njlay",
+    "body": [
+      "{% extends \"layout.nj\" %}",
+      "{% block content %}",
+      "",
+      "$0",
+      "",
+      "{% endblock %}"
+    ]
+  },
+  "Nj-include": {
+    "prefix": "njinc",
+    "body": [
+      "{% include \"components/$0\" %}"
+    ]
+  },
+  "Nj-macro": {
+    "prefix": "njmacro",
+    "body": [
+      "{% macro $0() %}",
+      "{% endmacro %}"
+    ]
+  },
+  "Nj-for": {
+    "prefix": "njfor",
+    "body": [
+      "{% for item in $0 %}",
+      "{% endfor %}"
+    ]
+  },
+  "Media-xxs": {
+    "prefix": "<xxs",
+    "body": [
+        "@include media('<xxs') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-xs": {
+    "prefix": "<xs",
+    "body": [
+        "@include media('<xs') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-sm": {
+    "prefix": "<sm",
+    "body": [
+        "@include media('<sm') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-md": {
+    "prefix": "<md",
+    "body": [
+        "@include media('<md') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-lg": {
+    "prefix": "<lg",
+    "body": [
+        "@include media('<lg') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-xl": {
+    "prefix": "<xl",
+    "body": [
+      "@include media('<xl') {",
+      "    $0",
+      "}"
+    ]
+  },
+  "Media-xxs>": {
+    "prefix": ">xxs",
+    "body": [
+        "@include media('>xxs') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-xs>": {
+    "prefix": ">xs",
+    "body": [
+        "@include media('>xs') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-sm>": {
+    "prefix": ">sm",
+    "body": [
+        "@include media('>sm') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-md>": {
+    "prefix": ">md",
+    "body": [
+        "@include media('>md') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media-lg>": {
+    "prefix": ">lg",
+    "body": [
+        "@include media('>lg') {",
+        "    $0",
+        "}"
+    ]
+  },
+  "Media": {
+    "prefix": "media",
+    "body": [
+        "@include media('$0') {",
+        "}"
+    ]
+  },
+  "hover": {
+    "prefix": "hov",
+    "body": [
+        "&:hover {",
+        "    $0",
+        "}"
+    ]
+  },
+  "font": {
+    "prefix": "fon",
+    "body": [
+        "@include font($0);"
+    ]
+  },
+  "var": {
+    "prefix": "va",
+    "body": [
+        "var($0)"
+    ]
+  },
+  "before": {
+    "prefix": "befo",
+    "body": [
+      "&::before {$0}"
+    ]
+  },
+  "after": {
+    "prefix": "afte",
+    "body": [
+      "&::after {$0}"
+    ]
+  },
+  "slamp": {
+    "prefix": "slam",
+    "body": [
+      "slamp($0)"
+    ]
+  },
+  "minmax": {
+    "prefix": "minmax",
+    "body": [
+      "minmax($0)"
+    ]
+  },
+  "allzero": {
+    "prefix": "azero",
+    "body": [
+      "top: 0;",
+      "right: 0;",
+      "left: 0;",
+      "bottom: 0;$0"
+    ]
+  },
+  "background": {
+    "prefix": "bg",
+    "body": [
+      "background: $0;"
+    ]
+  },
+  "url": {
+    "prefix": "url",
+    "body": [
+      "url('../assets/img/$0')"
+    ]
+  },
+  "path": {
+    "prefix": "path",
+    "body": [
+      "path('$0')"
+    ]
+  },
+  "rem": {
+    "prefix": "r",
+    "body": [
+      "r($0)"
+    ]
+  },
+  "&__": {
+    "prefix": "__",
+    "body": [
+      "&__"
+    ]
+  },
+  "&-": {
+    "prefix": "-",
+    "body": [
+      "&-"
+    ]
+  },
+  "border-radius": {
+    "prefix": "br",
+    "body": [
+      "border-radius: $0;"
+    ]
+  },
+  "sprite-size": {
+    "prefix": "sprite-size",
+    "body": [
+      "@include sprite-size($0);"
+    ]
+  },
+  "sprite": {
+    "prefix": "sprite",
+    "body": [
+        "<svg><use href=\"/src/assets/img/svg-sprite/sprite.svg#$0\"></use></svg>"
+    ]
+  },
+  "data-move-el": {
+    "prefix": "data-move",
+    "body": [
+      "data-move-el=\"[{'bp-max': 992, 'index': 1, 'target': '.class'}]\""
+    ]
+  },
+  "&nbsp;": {
+    "prefix": "&nbsp;",
+    "body": [
+      "&nbsp;"
+    ]
+  }
+}

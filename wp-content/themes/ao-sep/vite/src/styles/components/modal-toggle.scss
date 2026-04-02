@@ -1,0 +1,94 @@
+.modal-toggle {
+    position: relative;
+    width: max-content;
+    cursor: pointer;
+
+    &__button {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    &__label {
+        @include font();
+    }
+
+    &__arrow {
+        margin: 1px 0 0;
+        @include sprite-size(1.6rem, 1rem);
+        transition: .3s;
+    
+        use {
+            stroke: var(--text);
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    }
+
+    &__modal {
+        position: absolute;
+        top: calc(100% + r(15));
+        left: 0;
+        width: max-content;
+        max-width: 360px;
+        padding: slamp(r(16), r(24));
+        z-index: 600;
+        opacity: 0;
+        cursor: default;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        transition: opacity .3s;
+        transform: scaleY(0);
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 0;
+            right: 0;
+            height: 15px;
+            z-index: 650;
+        }
+    }
+
+    &__list {
+        width: max-content;
+        max-width: 100%;
+
+        &-item {
+            width: max-content;
+            margin: 0 0 r(12);
+            cursor: pointer;
+            color: var(--text);
+            transition: .35s;
+
+            &:hover {
+                color: var(--primary);
+            }
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+
+        &-link {
+            color: currentColor;
+            text-decoration: none;
+            font-weight: 500;
+            line-height: 120%;
+        }
+    }
+
+    &.opened {
+        .modal-toggle {
+            &__modal {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+
+            &__arrow {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

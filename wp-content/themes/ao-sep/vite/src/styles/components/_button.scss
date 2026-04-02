@@ -1,0 +1,103 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: slamp(r(5), r(10));
+    width: max-content;
+    padding: slamp(r(15), r(20)) slamp(r(30), r(35));
+    cursor: pointer;
+    font-weight: 500;
+    font-size: slamp(r(14), r(16));
+    line-height: 100%;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border-radius: r(20);
+    transition: .3s;
+    will-change: transform;
+    user-select: none;
+
+    &--primary {
+        color: var(--white);
+        background: var(--primary);
+
+        &:hover {
+            background: var(--accent);
+        }
+    }
+
+    &--trans {
+        border: .12rem solid var(--primary);
+
+        &:hover {
+            color: var(--white);
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+    }
+
+    img {
+        max-width: calc(var(--index) * 2);
+        height: auto;
+        -webkit-user-drag: none;
+    }
+
+    &:active {
+        transform: scale(.95);
+    }
+
+    // Button loader styles
+    &.loading {
+        pointer-events: none;
+        opacity: .7;
+    }
+
+    .btn-text {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-loader {
+        display: none;
+        align-items: center;
+        margin-left: r(8);
+
+        &.show {
+            display: inline-flex;
+        }
+    }
+
+    .spinner {
+        animation: spin 1s linear infinite;
+    }
+
+    .spinner-circle {
+        stroke-dasharray: 50;
+        stroke-dashoffset: 25;
+        animation: dash 1.5s ease-in-out infinite;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 50;
+    }
+
+    50% {
+        stroke-dashoffset: 12.5;
+    }
+
+    100% {
+        stroke-dashoffset: 50;
+    }
+}

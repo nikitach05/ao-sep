@@ -1,0 +1,39 @@
+.gmb-btn {
+    cursor: pointer;
+
+    &__line {
+        width: r(18);
+        height: r(2);
+        margin: 0;
+        background: var(--white);
+        border-radius: r(12);
+        transition: .25s;
+
+        &:nth-child(2) {
+            margin-top: r(3);
+        }
+
+        &:nth-child(3) {
+            margin-top: r(3);
+        }
+    }
+
+    &--opened {
+
+        .gmb-btn__line {
+            &:nth-child(1) {
+                display: none;
+            }
+
+            &:nth-child(2) {
+                transform: rotate(45deg);
+                margin-top: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+                margin-top: r(-2);
+            }
+        }
+    }
+}

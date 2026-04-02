@@ -1,0 +1,14 @@
+// Переменные, миксины, функции
+@import "helpers/import/import";
+
+// CSS-файлы библиотек
+@import "vendor/import/import";
+
+// Компоненты
+@import "components/import/import";
+
+// Основное
+@import "base/import/import";
+
+// Страницы
+@import "pages/import/import";

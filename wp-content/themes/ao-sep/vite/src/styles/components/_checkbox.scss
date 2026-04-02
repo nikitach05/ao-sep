@@ -1,0 +1,47 @@
+.checkbox-field {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: r(10);
+        height: r(10);
+        opacity: 0;
+        z-index: -100;
+    }
+
+    &__box {
+        flex-shrink: 0;
+        width: r(22);
+        height: r(22);
+        border: 1px solid var(--text);
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 70%;
+        cursor: pointer;
+
+        &.active {
+            border-color: var(--primary);
+            background-color: var(--primary);
+            background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m12.598 1.15-7.7 7.7-3.5-3.5' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+
+        &.error {
+            border-color: var(--error);
+        }
+    }
+
+    &__label {
+        max-width: r(700);
+        margin: 0 0 0 r(14);
+        @include font(r(14));
+        line-height: 120%;
+        color: var(--text);
+        cursor: pointer;
+    }
+}

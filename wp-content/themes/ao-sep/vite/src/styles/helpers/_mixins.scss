@@ -1,0 +1,70 @@
+@mixin noscroll {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+}
+
+@mixin scrollbar($color: gray) {
+    &::-webkit-scrollbar {
+        width: 3px;
+        height: 10px;
+        background: $color;
+        border-radius: 2rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 2rem;
+    }
+}
+
+@mixin font($size-min: 1.6rem, $size-max: null, $font-weight: 400, $family: null, $font-style: null) {
+
+    @if $family !=null {
+        font-family: $family, sans-serif;
+    }
+
+    @if $size-max ==null {
+        $size-max: $size-min;
+    }
+
+    font-size: slamp($size-min, $size-max);
+
+    font-weight: $font-weight;
+
+    @if $font-style !=null {
+        font-style: $font-style;
+    }
+}
+
+@mixin dots-line($number) {
+    display: -webkit-box;
+    -webkit-line-clamp: $number;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin sprite-size($width, $height) {
+    max-width: $width;
+    min-width: $width;
+    width: $width;
+    height: $height;
+    max-height: $height;
+    min-height: $height;
+}
+
+@mixin for_filter_blur {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
+}

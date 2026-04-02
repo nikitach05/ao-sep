@@ -1,0 +1,121 @@
+:root {
+    --swiper-theme-color: #05B5CC;
+}
+
+.swiper-arrows {
+    position: relative;
+    user-select: none;
+
+    &__prev, &__next {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: var(--primary) no-repeat center / 50%;
+        transition: background .25s;
+
+        &:hover {
+            background-color: var(--primary);
+        }
+    }
+
+    &__prev {
+        transform: rotate(180deg);
+    }
+
+    @include media('<sm') {
+        &__prev, &__next {
+            width: 32px;
+            height: 32px;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.swiper-arrows-prev,
+.swiper-arrows-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: slamp(3rem, 6rem);
+    height: slamp(3rem, 6rem);
+    border-radius: 50%;
+    background: var(--primary);
+    transition: .25s;
+    user-select: none;
+
+    svg {
+        width: 40%;
+        height: 40%;
+
+        use {
+            stroke: var(--white);
+        }
+    }
+
+    &.swiper-button-disabled {
+        pointer-events: none;
+        background: gray;
+    }
+
+    &:not(&.swiper-button-disabled):hover {
+        background: var(--accent);
+    }
+}
+
+@mixin swiper-arrows($size, $translate: 0, $top: 50%) {
+
+    .swiper-arrows-prev,
+    .swiper-arrows-next {
+        position: absolute;
+        top: calc($top - slamp(calc($size / 4), calc($size / 2)));
+        width: slamp(calc($size / 2), $size);
+        height: slamp(calc($size / 2), $size);
+        z-index: 100;
+    }
+
+    .swiper-arrows-prev {
+        left: calc(slamp(calc($size / 4), calc($size / 2)) * -1);
+        transform: translateX(calc($translate) * -1) rotate(90deg);
+    }
+
+    .swiper-arrows-next {
+        right: calc(slamp(calc($size / 4), calc($size / 2)) * -1);
+        transform: translateX($translate) rotate(-90deg);
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: left;
+    width: auto;
+
+    .swiper-pagination-bullet {
+        background: var(--text);
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        transition: .25s;
+
+        &-active {
+            background: var(--primary);
+        }
+
+        @include media('<sm') {
+            width: 5px;
+            height: 5px;
+            margin: 0 3px;
+        }
+    }
+}

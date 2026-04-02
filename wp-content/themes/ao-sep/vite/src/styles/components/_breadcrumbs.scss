@@ -1,0 +1,50 @@
+.breadcrumbs {
+    margin: r(30) 0 0 0;
+    &__list {
+        margin: 0;
+        padding: 0;
+        li {
+            position: relative;
+            display: inline-block;
+            margin: 0 r(24) 0 0;
+            font-size: r(15);
+            line-height: 120%;
+            &::after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 3px);
+                right: -15px;
+                width: 6px;
+                height: 8px;
+                background-image: url("data:image/svg+xml,%3Csvg width='6' height='8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 .667 5 4 1 7.333' stroke='%23454B56'/%3E%3C/svg%3E");
+                background-size: contain;    
+            }
+            &:last-child {
+                margin: 0;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+            transition: .25s;
+        }
+
+        span {
+            color: var(--black);
+        }
+    }
+
+    &--white {
+        .breadcrumbs {
+            &__list {
+                a, span {
+                    color: #F8FEFF;
+                }
+            }
+        }
+    }
+}

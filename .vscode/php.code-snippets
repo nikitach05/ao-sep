@@ -1,0 +1,44 @@
+{
+  "get_field": {
+    "prefix": "gf",
+    "body": [
+      "get_field('$0')",
+    ]
+  },
+  "php_tag=": {
+    "prefix": "=php",
+    "body": [
+      "<?= $0 ?>",
+    ]
+  },
+  "php_tag": {
+    "prefix": "php",
+    "body": [
+      "<?php $0 ?>",
+    ]
+  },
+  "wp_get_attachment_image": {
+    "prefix": "wpimage",
+    "body": [
+      "wp_get_attachment_image($0, 'large', false, ['class' => '', 'loading' => 'lazy'])",
+    ]
+  },
+  "get_image": {
+    "prefix": "gi",
+    "body": [
+      "get_image($0, '')",
+    ]
+  },
+  "thumbnail": {
+    "prefix": "thumbnail",
+    "body": [
+      "the_post_thumbnail('large', ['class' => '$0'])",
+    ]
+  },
+  "if_not_empty": {
+    "prefix": "ife",
+    "body": [
+      "<?php if (!empty($0)): ?>",
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+.nfp {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: r(80) 0;
+        min-height: calc(100vh - r(500));
+    }
+
+    &__title {
+        h1 {
+            font-size: r(100);
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: -0.06em;
+            text-transform: uppercase;
+        }
+    }
+
+    &__text {
+        font-size: r(24);
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__btn {
+        margin-top: r(24);
+    }
+}

@@ -1,0 +1,57 @@
+.pagination {
+    &__list {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    
+    &__item {
+        margin: 0 r(5) 0 0;
+        border-radius: r(3);
+        line-height: 100%;
+        background: var(--gray);
+        transition: background .25s;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: r(40);
+            height: r(40);
+            color: var(--text);
+        }
+
+        &--active {
+            background: $primary;
+
+            a {
+                color: var(--white);
+            }
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+
+        &:not(&--active):hover {
+            background: darken(#cacaca, 3%);
+
+            a {
+                color: var(--primary);
+            }
+        }
+
+        &--prev, &--next {
+            &:hover {
+                .pagination__arrow {
+                    stroke: var(--primary);
+                }
+            }
+        }
+    }
+
+    &__arrow {
+        stroke: var(--gray);
+        transition: stroke .25s;
+    }
+}

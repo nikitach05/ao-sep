@@ -1,0 +1,61 @@
+.radio-field {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: r(10);
+        height: r(10);
+        opacity: 0;
+        z-index: -100;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: r(24);
+        height: r(24);
+        cursor: pointer;
+        border-radius: 50%;
+        background: var(--border);
+
+        &::before {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            width: r(12);
+            height: r(12);
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        &.active {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &.error {
+            border-color: var(--error);
+        }
+    }
+
+    &__label {
+        max-width: r(700);
+        margin: 0 0 0 r(14);
+        font-size: slamp(r(14), r(16));
+        line-height: 100%;
+        color: var(--text);
+        cursor: pointer;
+
+        a {
+            color: var(--text);
+        }
+    }
+}

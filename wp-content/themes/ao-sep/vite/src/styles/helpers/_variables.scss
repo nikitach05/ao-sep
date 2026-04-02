@@ -1,0 +1,60 @@
+:root {
+    // Colors
+    --primary: #203b7a;
+    --accent: #203b7a;
+    --text: #111827;
+    --text-gray: #6b6b6b;
+    --white: white;
+    --light: #f6f6f6;
+    --gray: #c4c4c4;
+    --border: #d4d4d4;
+    --error: #B4241A;
+    
+    // Index
+    --index: calc(1vw + 1vh);
+
+    // Fonts
+    --regular: 'Involve';
+
+    // Transition
+    --transition: .3s cubic-bezier(.2, .5, 0, 1);
+
+    // Box-shadow
+    --box-shadow: 0 4px 8px 0 rgba(113, 128, 150, .08), 0 0 1px 0 rgba(113, 128, 150, .04);
+}
+
+// Indent
+$min-indent: r(30);
+$max-indent: r(60);
+
+// Container
+$container-gap: r(15);
+$container-default-width: r(1390);
+
+// Settings for include-media module
+$xxs: 440px;
+$xs: 578px;
+$sm: 768px;
+$md: 992px;
+$lg: 1280px;
+$xl: 1480px;
+
+$breakpoints: (
+    'xxs': $xxs,
+    'xs': $xs,
+    'sm': $sm,
+    'md': $md,
+    'lg': $lg,
+    'xl': $xl ) !default;
+
+$unit-intervals: (
+    'px': 0.5,
+    'em': 0.01,
+    'rem': 0.05) !default;
+
+// Scss-slamp
+$slamp_options: (
+    'root-size': 10px,
+    'min': 578px,
+    'max': 1480px
+);

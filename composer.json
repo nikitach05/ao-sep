@@ -1,0 +1,6 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "amocrm/amocrm-api-library": "^1.10"
+    }
+}

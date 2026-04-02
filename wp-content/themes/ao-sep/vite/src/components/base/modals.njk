@@ -1,0 +1,51 @@
+<div id="order-modal" style="display: none;">
+    <div class="order-modal__close close-modal" data-fancybox-close>
+        <svg>
+            <use href="/src/assets/img/svg-sprite/sprite.svg#close"></use>
+        </svg>
+    </div>
+
+    <div class="order-modal">
+        <div class="order-modal__title title">
+            <h2>Оставьте <span>заявку</span></h2>
+        </div>
+
+        <form class="order-modal__form">
+            <div class="field">
+                <input type="text" class="input required" name="name" placeholder="Ваше имя">
+            </div>
+            <div class="field">
+                <input type="tel" class="input required" name="phone" placeholder="Телефон">
+            </div>
+            <div class="field">
+                <textarea class="textarea" name="message" placeholder="Комментарий"></textarea>
+            </div>
+            <div class="field checkbox-field">
+                <div class="checkbox-field__box active">
+                    <input type="checkbox" checked class="checkbox-field__input required">
+                </div>
+                <div class="checkbox-field__label">Согласен(а) на <a href="#">обработку персональных данных</a></div>
+            </div>
+            <div class="field">
+                <button class="order-modal__form-btn btn btn--primary send-form">
+                    <span class="btn__text">Отправить заявку</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="success-modal" style="display: none;">
+    <div class="success-modal">
+        <div class="success-modal__icon">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="40" fill="#4CAF50" />
+                <path d="M25 40L35 50L55 30" stroke="white" stroke-width="4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </div>
+        <h3 class="success-modal__title">Заявка успешно отправлена!</h3>
+        <p class="success-modal__text">Спасибо за вашу заявку. Наш менеджер свяжется с вами в ближайшее время.</p>
+        <button class="success-modal__button btn btn--primary" data-fancybox-close>Продолжить</button>
+    </div>
+</div>

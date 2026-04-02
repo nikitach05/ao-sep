@@ -1,0 +1,43 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: slamp(r(600), r(860));
+    max-height: 100dvh;
+    aspect-ratio: 1550 / 860;
+    padding: r(156) 0 r(120);
+    background-color: var(--gray);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+
+    @include media('<xs') {
+        justify-content: flex-start;
+        height: 100dvh;
+        max-height: r(860);
+    }
+
+    &__title {
+        max-width: slamp(r(400), r(954));
+        color: var(--white);
+        font-weight: 600;
+        font-size: slamp(r(24), r(56));
+        line-height: 130%;
+        text-transform: uppercase;
+
+        strong {
+            display: block;
+            font-weight: 600;
+            font-size: slamp(r(64), r(150));
+            line-height: 110%;
+        }
+    }
+
+    &__text {
+        margin: slamp(r(32), r(56)) 0 0;
+        font-weight: 600;
+        font-size: slamp(r(16), r(32));
+        line-height: 120%;
+        color: var(--white);
+    }
+}

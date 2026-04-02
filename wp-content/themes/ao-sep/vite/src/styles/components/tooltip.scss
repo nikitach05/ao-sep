@@ -1,0 +1,55 @@
+.tooltip {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    gap: r(4);
+    position: absolute;
+    left: 0;
+    max-width: r(240);
+    width: max-content;
+    flex-shrink: 0;
+    padding: r(16);
+    border-radius: r(20);
+    cursor: default;
+    @include font(r(14));
+    background: var(--white);
+    box-shadow: 0 8px 24px -3px rgba(16, 24, 40, 0.1), 0 8px 24px -3px rgba(16, 24, 40, 0.05);
+    z-index: -1;
+
+    &.opened {
+        visibility: visible;
+        z-index: 50;
+    }
+
+    img {
+        max-width: r(18);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: r(8);
+
+        li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            margin: 0;
+            padding-left: r(20);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: auto;
+                left: 0;
+                width: r(11.3);
+                height: r(11.3);
+                background: url('../assets/img/svg/cross.svg') no-repeat center / contain;
+            }
+        }
+    }
+}

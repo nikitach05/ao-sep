@@ -1,0 +1,61 @@
+.custom-notification {
+	position: fixed;
+	top: r(20);
+	right: r(20);
+	background: var(--white);
+	padding: r(16) r(20);
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+	z-index: 10000;
+	display: flex;
+	align-items: center;
+	gap: r(12);
+	min-width: r(300);
+	max-width: r(500);
+	animation: slideIn 0.3s ease-out;
+
+	&--success {
+		border-left: 4px solid #4caf50;
+	}
+
+	&--error {
+		border-left: 4px solid #f44336;
+	}
+
+	&__content {
+		flex: 1;
+	}
+
+	&__message {
+		font-size: r(14);
+		color: #333;
+	}
+
+	&__close {
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: r(4);
+		display: flex;
+		align-items: center;
+		color: #999;
+		transition: color 0.2s;
+
+		&:hover {
+			color: #333;
+		}
+	}
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+

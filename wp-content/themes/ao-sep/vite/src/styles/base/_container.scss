@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    padding-left: $container-gap;
+    padding-right: $container-gap;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+
+    @include media('<lg') {
+        padding-left: r(15);
+        padding-right: r(15);
+    }
+}
+
+// xl
+@media (min-width: $xl) {
+    .container {
+        max-width: $container-default-width;
+    }
+}

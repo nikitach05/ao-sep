@@ -1,0 +1,176 @@
+html {
+    font-size: 62.5%;
+    // scroll-behavior: smooth;
+}
+
+html,
+body {
+    overscroll-behavior: none;
+    scrollbar-gutter: stable;
+}
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: r(320);
+    max-width: 100%;
+    min-height: 100vh;
+    font-size: r(16);
+    font-weight: 500;
+    font-family: var(--regular), sans-serif;
+    line-height: 140%;
+    color: var(--text);
+    // text-wrap: balance;
+
+    &.hidden {
+        overflow: hidden;
+    }
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+::selection {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+// ::-webkit-scrollbar {
+//     width: r(6);
+//     background: var(--gray);
+//     border-radius: r(20);
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     background: var(--primary);
+//     border-radius: 2rem;
+// }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+iframe.iframe-video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+img {
+    display: block;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+strong {
+    font-family: var(--bold);
+}
+
+button {
+    padding: 0;
+    border: none;
+}
+
+search {
+    display: block;
+}
+
+a:focus-visible {
+    border: 0;
+    outline: 2px solid var(--primary);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Indent
+.m-indent {
+    margin: slamp($min-indent, $max-indent) 0;
+}
+
+.m-indent-2x {
+    margin: slamp(calc($min-indent * 2), calc($max-indent * 2)) 0;
+}
+
+.mt-indent {
+    margin-top: slamp($min-indent, $max-indent);
+}
+
+.mb-indent {
+    margin-bottom: slamp($min-indent, $max-indent);
+}
+
+.p-indent {
+    padding: slamp($min-indent, $max-indent) 0;
+}
+
+.pt-indent {
+    padding-top: slamp($min-indent, $max-indent);
+}
+
+.pb-indent {
+    padding-bottom: slamp($min-indent, $max-indent);
+}
+
+.p-indent-2x {
+    padding: slamp(calc($min-indent * 2), calc($max-indent * 2)) 0;
+}
+
+.pt0 {
+    padding-top: 0;
+}
+
+.pb0 {
+    padding-bottom: 0;
+}
+
+.mt0 {
+    margin-top: 0;
+}
+
+.mb0 {
+    margin-bottom: 0;
+}
+
+// Overlayscrollbars
+.os-scrollbar,
+.os-scrollbar.os-theme-dark {
+    --os-track-bg: var(--gray);
+    --os-handle-bg: var(--primary);
+    --os-track-border-radius: r(10);
+    --os-handle-border-radius: r(10);
+}
+
+// Fancybox
+.fancybox__container {
+    --fancybox-bg: rgba(80, 80, 80, .9) !important;
+}
+
+.f-button.is-close-btn {
+    display: none;
+}

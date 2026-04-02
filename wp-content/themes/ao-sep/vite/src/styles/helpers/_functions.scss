@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+$resolution: 360;
+
+@function r($px) {
+  $result: math.div($px, 10) * 1rem;
+  @return $result;
+}
+
+@function vw($px) {
+  @return (($px/$resolution) * 100) + vw;
+}
+
+@function path($image-name) {
+  $image-path: '../assets/img/' + $image-name;
+  @return url($image-path);
+}

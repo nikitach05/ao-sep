@@ -1,0 +1,12 @@
+{% macro button(text, class = '', attrs = '') %}
+<button class="{{class}} btn btn--primary send-form" type="button" {% if attrs %} {{ attrs }} {% endif %}>
+    <span class="btn-text">
+        {{text}}
+    </span>
+    <span class="btn-loader">
+        <svg class="spinner" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <circle class="spinner-circle" cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="2" />
+        </svg>
+    </span>
+</button>
+{% endmacro %}

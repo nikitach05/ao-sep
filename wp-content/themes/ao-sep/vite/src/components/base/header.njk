@@ -1,0 +1,103 @@
+<header class="header">
+	<div class="container">
+		<div class="header__content">
+			<a href="/" class="header__logo logo">
+				<img src="/src/assets/img/svg/logo.svg" alt="Logo">
+			</a>
+
+			<ul class="header__menu menu">
+				{% for li in menu %}
+				{% if li.submenu.length > 0 %}
+				<li class="menu__item menu__item--has-submenu">
+					<span class="menu__link">{{li.item}}</span>
+					<svg class="menu__arrow">
+						<use href="/src/assets/img/svg-sprite/sprite.svg#plus"></use>
+					</svg>
+					<ul class="menu__submenu">
+						{% for subli in li.submenu %}
+						<li class="menu__submenu-item">
+							<a class="menu__submenu-link" href="#">
+								{{subli}}
+								<svg class="menu__submenu-arrow">
+									<use href="/src/assets/img/svg-sprite/sprite.svg#arrow-right"></use>
+								</svg>
+							</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+				{% else %}
+				<li class="menu__item">
+					<a class="menu__link" href="#">{{li.item}}</a>
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+
+			<div class="header__menu-toggle menu-toggle">
+				<svg>
+					<use href="/src/assets/img/svg-sprite/sprite.svg#gmb"></use>
+				</svg>
+			</div>
+
+			<div class="modal-toggle header__langs">
+				<div class="modal-toggle__button">
+					<div class="modal-toggle__label">RU +</div>
+				</div>
+				<div class="modal-toggle__modal">
+					<ul class="modal-toggle__list">
+						<li class="modal-toggle__list-item">
+							<a class="modal-toggle__list-link" href="#">En</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="header__mobile-menu mobile-menu">
+	
+		<div class="mobile-menu__close">
+			<svg>
+				<use href="/src/assets/img/svg-sprite/sprite.svg#close"></use>
+			</svg>
+		</div>
+
+		<a href="/" class="header__logo logo">
+			<img src="/src/assets/img/svg/logo.svg" alt="Logo">
+		</a>
+	
+		<ul class="mobile-menu__list">
+			{% for li in menu %}
+			{% if li.submenu.length > 0 %}
+			<li class="mobile-menu__list-item mobile-menu__list-item--has-submenu">
+				<div class="mobile-menu__list-head">
+					<span class="mobile-menu__list-trigger" role="button" tabindex="0">{{li.item}}</span>
+					<svg class="mobile-menu__list-arrow" aria-hidden="true">
+						<use href="/src/assets/img/svg-sprite/sprite.svg#plus"></use>
+					</svg>
+				</div>
+				<ul class="mobile-menu__submenu">
+					{% for subli in li.submenu %}
+					<li class="mobile-menu__submenu-item">
+						<a class="mobile-menu__submenu-link" href="#">{{subli}}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</li>
+			{% else %}
+			<li class="mobile-menu__list-item">
+				<a class="mobile-menu__list-link" href="#">{{li.item}}</a>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+
+		<div class="mobile-menu__langs">
+			<a class="mobile-menu__langs-item active" href="/">RU</a> | <a class="mobile-menu__langs-item" href="/en/">EN</a>
+		</div>
+	
+	</div>
+	
+</header>
