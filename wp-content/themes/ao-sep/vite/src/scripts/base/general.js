@@ -1,21 +1,22 @@
 // Modules
 // import { OverlayScrollbars } from 'overlayscrollbars';
+import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 // Compoments
 import '../components/sliders';
 import '../components/checkbox';
+import isMobile from "../helpers/isMobile";
 import modalToggle from "../components/modal-toggle";
 import { MaskPhone } from '../components/input-masks';
-// import ScrollTop from "../components/scroll-top";
 
 document.addEventListener('DOMContentLoaded', () => {
-
 	new MaskPhone('input[type="tel"]');
 	new modalToggle();
-
-	// new ScrollTop(".to-top", 1000);
 
 	Fancybox.bind("[data-fancybox]", {
 		Thumbs: {
@@ -23,6 +24,41 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 		hideScrollbar: false,
 	});
+
+	// Lenis smooth scrolling
+	let lenis;
+
+	// Initialize Lenis smooth scrolling
+	const initSmoothScrolling = () => {
+		lenis = new Lenis({
+			lerp: 0.2,
+			smooth: isMobile() ? false : true,
+		});
+
+		// Чтобы ScrollTrigger видел ту же позицию, что и Lenis (иначе pin/триггеры врут).
+		window.__lenis = lenis;
+		ScrollTrigger.scrollerProxy(window, {
+			scrollTop(value) {
+				if (arguments.length) lenis.scrollTo(value, { immediate: true });
+				return lenis.scroll;
+			},
+			getBoundingClientRect() {
+				return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+			},
+		});
+
+		lenis.on("scroll", ScrollTrigger.update);
+
+		const scrollFn = (time) => {
+			lenis.raf(time);
+			requestAnimationFrame(scrollFn);
+		};
+
+		requestAnimationFrame(scrollFn);
+	};
+
+	// Lenis (smooth scrolling)
+	initSmoothScrolling();
 
 	// Fancybox order-modal
 	const orderModalButtons = document.querySelectorAll("[data-modal]");
@@ -65,26 +101,5 @@ document.addEventListener('DOMContentLoaded', () => {
 				},
 			);
 		});
-	});
-
-	// Сохраняем текущий URL и позицию прокрутки перед обновлением
-	window.addEventListener("beforeunload", () => {
-		sessionStorage.setItem("lastUrl", window.location.href);
-		sessionStorage.setItem("scrollPosition", window.scrollY);
-	});
-
-	// Восстанавливаем позицию после загрузки, если это та же страница
-	window.addEventListener("load", () => {
-		const lastUrl = sessionStorage.getItem("lastUrl");
-		const scrollPosition = sessionStorage.getItem("scrollPosition");
-
-		// Если предыдущий URL совпадает с текущим - восстанавливаем позицию
-		if (lastUrl === window.location.href && scrollPosition) {
-			window.scrollTo(0, parseInt(scrollPosition));
-		}
-
-		// Очищаем сохранённые данные
-		sessionStorage.removeItem("lastUrl");
-		sessionStorage.removeItem("scrollPosition");
 	});
 });

@@ -1,15 +1,7 @@
-.title {
-    position: relative;
-    display: inline-block;
-
-    h1,
-    h2 {
-        display: inline-block;
-        font-weight: var(--semibold);
-        font-size: slamp(r(24), r(54));
-        line-height: 120%;
-        hyphens: manual;
-    }
+h2.title {
+    font-size: slamp(r(24), r(56));
+    font-weight: 600;
+    line-height: 120%;
 }
 
 .under-title {
@@ -17,6 +9,7 @@
     display: flex;
     align-items: center;
     padding: 0 0 0 r(16);
+    margin: 0 0 slamp(r(20), r(32));
     font-weight: 600;
     font-size: slamp(r(14), r(16));
     line-height: 100%;
@@ -30,6 +23,19 @@
         height: r(8);
         border-radius: 50%;
         background: var(--primary);
+    }
+}
+
+.text {
+    font-size: slamp(r(14), r(16));
+    font-weight: 500;
+    line-height: 130%;
+    color: var(--text-gray);
+
+    p {
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -63,4 +69,69 @@
 .textarea {
     min-height: 16rem;
     resize: none;
+}
+
+.hr-bottom {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: r(15);
+        right: r(15);
+        border-bottom: 1px solid var(--gray-100);
+    }
+}
+
+.arrows {
+    display: flex;
+    align-items: center;
+    gap: slamp(r(10), r(16));
+
+    &__prev, &__next {
+        display: grid;
+        place-items: center;
+        width: slamp(r(40), r(56));
+        height: slamp(r(40), r(56));
+        border-radius: 50%;
+        cursor: pointer;
+        background: var(--primary);
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, .05);
+        transition: .35s;
+
+        svg {
+            @include sprite-size(r(24), r(16));
+
+            @include media('<sm') {
+                @include sprite-size(r(20), r(12));
+            }
+
+            use {
+                fill: var(--white);
+                transition: .35s;
+            }
+        }
+
+        @include media('>=xs') {
+            &:hover:not(.disable) {
+                background: var(--white);
+        
+                svg use {
+                    fill: var(--primary);
+                }
+            }
+        }
+
+        &.disable {
+            pointer-events: none;
+            background: var(--gray);
+            opacity: .6;
+            cursor: default;
+        }
+    }
+
+    &__prev {
+        transform: rotate(-180deg);
+    }
 }

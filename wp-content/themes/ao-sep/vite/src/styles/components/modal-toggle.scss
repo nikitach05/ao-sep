@@ -28,7 +28,7 @@
     &__modal {
         position: absolute;
         top: calc(100% + r(15));
-        left: 0;
+        right: 0;
         width: max-content;
         max-width: 360px;
         padding: slamp(r(16), r(24));

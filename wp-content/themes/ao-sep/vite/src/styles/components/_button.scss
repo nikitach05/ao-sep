@@ -2,48 +2,106 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: slamp(r(5), r(10));
+    min-height: r(44);
+    gap: slamp(r(6), r(12));
     width: max-content;
-    padding: slamp(r(15), r(20)) slamp(r(30), r(35));
+    padding: r(6) r(24);
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
     font-size: slamp(r(14), r(16));
     line-height: 100%;
     text-align: center;
     text-decoration: none;
     outline: none;
-    border-radius: r(20);
-    transition: .3s;
+    transition: .35s;
     will-change: transform;
     user-select: none;
+
+    span, svg {
+        position: relative;
+        z-index: 100;
+    }
+
+    svg {
+        @include sprite-size(r(24), r(16));
+        transition: .35s;
+
+        use {
+            fill: var(--primary);
+            transition: .35s;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        top: 100%;
+        transition: .35s;
+    }
 
     &--primary {
         color: var(--white);
         background: var(--primary);
 
-        &:hover {
-            background: var(--accent);
+        svg {
+            use {
+                fill: var(--white);
+            }
+        }
+        
+        &::before {
+            background: var(--white);
+        }
+
+        @include media('>=xs') {
+            &:hover {
+                color: var(--primary);
+        
+                svg {
+                    use {
+                        fill: var(--primary);
+                    }
+                }
+            }
         }
     }
 
-    &--trans {
-        border: .12rem solid var(--primary);
+    &--white {
+        color: var(--primary);
+        background: var(--white);
 
-        &:hover {
-            color: var(--white);
-            border-color: var(--accent);
-            background: var(--accent);
+        &::before {
+            background: var(--primary);
         }
-    }
 
-    img {
-        max-width: calc(var(--index) * 2);
-        height: auto;
-        -webkit-user-drag: none;
+        @include media('>=xs') {
+            &:hover {
+                color: var(--white);
+        
+                svg {
+                    use {
+                        fill: var(--white);
+                    }
+                }
+            }
+        }
     }
 
     &:active {
-        transform: scale(.95);
+        transform: scale(.96);
+    }
+
+    @include media('>=xs') {
+        &:hover {
+            svg {
+                transform: translateX(r(6));
+            }
+
+            &::before {
+                top: 0%;
+            }
+        }
     }
 
     // Button loader styles
