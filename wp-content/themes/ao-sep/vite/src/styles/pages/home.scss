@@ -1,9 +1,12 @@
 .main {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     min-height: slamp(r(600), r(860));
-    max-height: 100dvh;
+    max-height: 100vh;
+    max-width: 100%;
+    width: 100%;
     aspect-ratio: 1550 / 860;
     padding: r(156) 0 r(120);
     background-color: var(--gray);
@@ -13,7 +16,7 @@
 
     @include media('<xs') {
         justify-content: flex-start;
-        height: 100dvh;
+        height: 100vh;
         max-height: r(860);
     }
 
