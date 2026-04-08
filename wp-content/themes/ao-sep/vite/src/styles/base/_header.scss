@@ -30,6 +30,14 @@
         }
     }
 
+    &:not(.is-front) {
+        .header {
+            &__logo {
+                filter: brightness(10);
+            }
+        }
+    }
+
     &__content {
         display: flex;
         justify-content: space-between;

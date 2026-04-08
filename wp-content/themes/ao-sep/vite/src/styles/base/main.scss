@@ -1,3 +1,9 @@
+h1.title {
+    font-size: slamp(r(40), r(80));
+    font-weight: 600;
+    line-height: 120%;
+}
+
 h2.title {
     font-size: slamp(r(24), r(56));
     font-weight: 600;
@@ -133,5 +139,37 @@ h2.title {
 
     &__prev {
         transform: rotate(-180deg);
+    }
+}
+
+.head-section {
+    color: var(--white);
+    background: var(--accent) url('../assets/img/svg/bg-head.svg') no-repeat center / cover;
+
+    @include media('<xs') {
+        background-position: 30% 0;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: r(600);
+    }
+
+    &__subtitle {
+        margin: slamp(r(24), r(40)) 0 0;
+        font-weight: 600;
+        font-size: slamp(r(24), r(40));
+        line-height: 130%;
+    }
+
+    &__text {
+        max-width: slamp(r(320), r(580));
+        width: 100%;
+        margin: slamp(r(40), r(56)) 0 0;
+        font-weight: 500;
+        font-size: slamp(r(14), r(16));
+        line-height: 140%;
     }
 }
