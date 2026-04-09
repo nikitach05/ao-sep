@@ -5,3 +5,4 @@ import './base/forms';
 
 // Pages
 import './pages/home'
+import './pages/history'

@@ -1,9 +1,11 @@
 /**
- * Выровнять высоту всех `.services-blocks__text` по самому высокому (стек слайдов не дёргается по вертикали).
+ * Выровнять высоту всех текстовых колонок в стеке слайдов по самому высокому.
  * ResizeObserver ловит смену ширины контейнера; rAF схлопывает частые вызовы в один кадр.
  */
-export function initEqualizeServicesTextsHeight(container) {
-	const selector = ".services-blocks__text";
+export function initEqualizeServicesTextsHeight(
+	container,
+	selector = ".services-blocks__text",
+) {
 	let raf = 0;
 
 	const apply = () => {

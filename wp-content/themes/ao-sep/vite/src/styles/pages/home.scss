@@ -270,6 +270,10 @@
         }
     }
 
+    &__title {
+        margin: 0 0 slamp(r(24), r(40));
+    }
+
     &__image {
         max-width: 100%;
         width: 100%;

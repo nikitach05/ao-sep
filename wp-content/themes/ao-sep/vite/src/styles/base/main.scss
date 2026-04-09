@@ -39,6 +39,8 @@ h2.title {
     color: var(--text-gray);
 
     p {
+        margin: 0 0 r(24);
+        
         &:last-of-type {
             margin-bottom: 0;
         }
