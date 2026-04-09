@@ -3,6 +3,21 @@
 
 {% block content %}
 
+{% macro historyMobileArrows() %}
+                <div class="history__arrows history__arrows--mobile arrows">
+                    <div class="history__arrow-prev arrows__prev">
+                        <svg>
+                            <use href="/src/assets/img/svg-sprite/sprite.svg#long-arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="history__arrow-next arrows__next">
+                        <svg>
+                            <use href="/src/assets/img/svg-sprite/sprite.svg#long-arrow"></use>
+                        </svg>
+                    </div>
+                </div>
+{% endmacro %}
+
 <section class="head-section pb-indent">
     <div class="head-section__container container">
         <h1 class="head-section__title title">Наша история</h1>
@@ -13,7 +28,6 @@
 </section>
 
 <section class="history">
-    <div class="history__pin">
         <div class="history__progress history-progress">
             <div class="history-progress__wrapper">
                 <div class="container">
@@ -62,6 +76,7 @@
                             </div>
                         </div>
                     </div>
+                    {{ historyMobileArrows() }}
                 </section>
 
                 <section class="history-blocks__item history-block-2">
@@ -88,6 +103,7 @@
                             </div>
                         </div>
                     </div>
+                    {{ historyMobileArrows() }}
                 </section>
 
                 <section class="history-blocks__item history-block-3">
@@ -103,6 +119,7 @@
                             <img class="history-block-3__img" src="/src/assets/img/image5.webp" data-fancybox loading="lazy" alt="Image">
                         </div>
                     </div>
+                    {{ historyMobileArrows() }}
                 </section>
 
                 <section class="history-blocks__item history-block-4">
@@ -128,35 +145,37 @@
                             ответственность за каждый объект. И добавили к этому современные технологии, гибкость и клиентоориентированность.</p>
                         </div>
                     </div>
+                    {{ historyMobileArrows() }}
                 </section>
 
                 <section class="history-blocks__item history-block-5">
                     <h2 class="history-block-5__title title">2000-е: Эра газа и&nbsp;комплексных решений</h2>
                     <div class="history-block-5__row">
+                    </div>
+                    <div class="history-block-5__row">
                         <div class="history-blocks__text text">
                             <p>Новое время потребовало новые решения. Мы стали лидерами в проектировании не только дизельных, но и газотурбинных (ГТЭС) и&nbsp;газопоршневых (ГПЭС) электростанций:</p>
                         </div>
-                        <div class="history-block-5__text text">
+                        <div class="history-block-5__text text second">
                             <p>Полвека назад нас создало государство для высоких целей. Сегодня мы — команда, которая добровольно выбрала путь
                             развития, качества и ответственности. Мы не просто проектируем электростанции под ключ, мы даем энергию для будущего,
                             обеспечиваем безопасность новых объектов.</p>
                         </div>
-                    </div>
-                    <div class="history-block-5__row">
                         <div class="history-block-5__block">
                             <div class="history-block-5__block-title">ЭСН для «Газпрома» и «Роснефти»</div>
                             <div class="history-block-5__block-text text">Мы разработали проекты энергоцентров для Южно-Русского, Бованенковского, Заполярного и других месторождений.</div>
                         </div>
-                        <div class="history-block-5__block">
+                        <div class="history-block-5__block dark">
                             <div class="history-block-5__block-title">Атомная энергетика</div>
                             <div class="history-block-5__block-text text">Мы проектировали РДЭС для новых энергоблоков Ростовской, Калининской, разрабатывали проекты модернизации РДЭС для 
                             большинства действующих блоков АЭС, систем выдачи мощности ИЯУ МБИР.</div>
                         </div>
                     </div>
+                    {{ historyMobileArrows() }}
                 </section>
             </div>
 
-            <div class="history__arrows arrows">
+            <div class="history__arrows history__arrows--desktop arrows">
                 <div class="history__arrow-prev arrows__prev">
                     <svg>
                         <use href="/src/assets/img/svg-sprite/sprite.svg#long-arrow"></use>
@@ -169,11 +188,6 @@
                 </div>
             </div>
         </div>
-
-        {# Внутри pin — как блок «about» на главной: иначе закреплённая область визуально тянется на весь экран. #}
-        <div class="history__pin-spacer" aria-hidden="true"></div>
-
-    </div>
 </section>
 
 {% endblock %}
