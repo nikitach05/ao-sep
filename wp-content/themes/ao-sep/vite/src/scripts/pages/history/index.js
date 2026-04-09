@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	};
 
-	const TX_DUR = 0.8;
+	const TX_DUR = 0.5;
 	const TX_EASE = "power1.inOut";
 
 	/** Кроссфейд целого блока; линия прогресса — tween scaleX. */
