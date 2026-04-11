@@ -37,7 +37,7 @@
             display: block;
         }
         
-        h1, h2, h3 {
+        h1, h2 {
             margin: slamp(r(40), r(80)) 0 0;
             font-weight: 600;
             font-size: slamp(r(24), r(32));
@@ -46,6 +46,13 @@
             &:first-of-type {
                 margin-top: 0;
             }
+        }
+
+        h3 {
+            margin: r(24) 0 0;
+            font-size: r(16);
+            font-weight: 600;
+            line-height: 120%;
         }
 
         ul, p {
@@ -67,6 +74,10 @@
                 margin: 0;
                 padding: 0 0 0 r(20);
             }
+        }
+
+        h3 + ul {
+            margin-top: r(4);
         }
     }
 
