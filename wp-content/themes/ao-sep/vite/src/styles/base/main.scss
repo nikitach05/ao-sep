@@ -46,6 +46,10 @@ h2.title {
             margin-bottom: 0;
         }
     }
+
+    strong {
+        color: var(--text);
+    }
 }
 
 .input,

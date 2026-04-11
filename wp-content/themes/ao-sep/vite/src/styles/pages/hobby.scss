@@ -1,0 +1,12 @@
+.hobby {
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: r(32);
+        margin: slamp(r(40), r(56)) 0 0;
+    }
+
+    &__title {
+        max-width: r(950);
+    }
+}
