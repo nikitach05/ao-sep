@@ -126,6 +126,12 @@ h2.title {
             }
         }
 
+        &.swiper-button-disabled {
+            opacity: .7;
+            pointer-events: none;
+            background: var(--gray);
+        }
+
         @include media('>=xs') {
             &:hover:not(.disable) {
                 background: var(--white);

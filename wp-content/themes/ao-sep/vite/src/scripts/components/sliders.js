@@ -29,8 +29,8 @@ const hobbies = new Swiper(".hobby-slider__items", {
 	spaceBetween: 20,
 	loop: false,
 	navigation: {
-		prevEl: ".hobby-slider .swiper-arrows-prev",
-		nextEl: ".hobby-slider .swiper-arrows-next",
+		prevEl: ".hobby__arrow-prev",
+		nextEl: ".hobby__arrow-next",
 	},
 	breakpoints: {
 		0: {

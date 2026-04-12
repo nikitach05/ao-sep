@@ -1,9 +1,15 @@
 .hobby {
+    overflow: hidden;
+    
     &__inner {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: r(32);
         margin: slamp(r(40), r(56)) 0 0;
+
+        @include media('<sm') {
+            grid-template-columns: minmax(0, 1fr);
+        }
     }
 
     &__title {
@@ -12,7 +18,12 @@
 }
 
 .hobby-slider {
-    margin: slamp(r(40), r(56)) 0 0;
+    position: relative;
+    margin: slamp(r(40), r(80)) 0 0;
+
+    &__items {
+        overflow: visible;
+    }
 
     .swiper-slide {
         width: auto;
@@ -29,5 +40,21 @@
         max-width: none;
         height: r(282);
         object-fit: cover;
+    }
+
+    .arrows {
+        position: absolute;
+        top: r(-24);
+        right: 0;
+        z-index: 10;
+        transform: translateY(-100%);
+
+        @include media('<sm') {
+            position: relative;
+            transform: none;
+            top: 0;
+            margin: r(40) auto 0;
+            justify-content: center;
+        }
     }
 }
