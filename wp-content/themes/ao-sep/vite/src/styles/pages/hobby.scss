@@ -10,3 +10,24 @@
         max-width: r(950);
     }
 }
+
+.hobby-slider {
+    margin: slamp(r(40), r(56)) 0 0;
+
+    .swiper-slide {
+        width: auto;
+    }
+
+    &__item {
+        width: auto;
+        height: auto;
+    }
+
+    &__img {
+        display: block;
+        width: auto;
+        max-width: none;
+        height: r(282);
+        object-fit: cover;
+    }
+}
