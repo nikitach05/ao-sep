@@ -1,5 +1,5 @@
 // Modules
-// import { OverlayScrollbars } from 'overlayscrollbars';
+import { OverlayScrollbars } from 'overlayscrollbars';
 import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,6 +9,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 // Compoments
 import '../components/sliders';
+import '../components/table-load-more';
 import '../components/checkbox';
 import isMobile from "../helpers/isMobile";
 import modalToggle from "../components/modal-toggle";
@@ -59,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Lenis (smooth scrolling)
 	initSmoothScrolling();
+
+	const tableWrapper = document.querySelectorAll(".table-wrapper");
+	tableWrapper.forEach(table => {
+		// Custom scrollbar for table
+		OverlayScrollbars(table, {});
+	});
 
 	// Fancybox order-modal
 	const orderModalButtons = document.querySelectorAll("[data-modal]");

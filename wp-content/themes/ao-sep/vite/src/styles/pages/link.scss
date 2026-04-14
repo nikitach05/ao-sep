@@ -1,0 +1,37 @@
+.link-page {
+    position: relative;
+    
+    &__text {
+        position: relative;
+        max-width: r(1032);
+        border-bottom: 1px solid var(--border);
+        padding-bottom: slamp(r(56), r(80));
+        margin-bottom: slamp(r(56), r(80));
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: r(-85);
+            right: r(85);
+            width: slamp(r(250), r(400));
+            height: slamp(r(250), r(400));
+            background: url('../assets/img/gost.webp') no-repeat center / contain;
+
+            @include media('<xs') {
+                top: r(-75);
+                right: r(60);
+            }
+        }
+    }
+
+    &__title {
+        max-width: r(1110);
+        font-weight: 600;
+        font-size: slamp(r(16), r(24));
+        line-height: 120%;
+    }
+
+    &__btn {
+        margin: r(22) auto 0;
+    }
+}

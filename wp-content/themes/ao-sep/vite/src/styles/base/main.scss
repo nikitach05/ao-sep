@@ -190,3 +190,73 @@ h2.title {
         }
     }
 }
+
+.table-wrapper {
+    padding-bottom: r(16);
+}
+
+table.table {
+    width: 100%;
+    min-width: r(640);
+    margin: slamp(r(40), r(56)) 0 0;
+    border-collapse: collapse;
+
+    &[data-table]:not(.is-table-expanded) tbody tr:nth-child(n + 6) {
+        display: none;
+    }
+
+    thead {
+        background: var(--gray-50);
+    }
+
+    tr {
+        th, td {
+            padding: slamp(r(20), r(24));
+            text-align: left;
+        }
+
+        th {
+            padding: slamp(r(18), r(22));
+            font-size: slamp(r(14), r(20));
+            font-weight: 600;
+            line-height: 100%;
+        }
+
+        td {
+            border-bottom: 1px solid var(--gray-100);
+            font-size: slamp(r(14), r(16));
+            line-height: 120%;
+        }
+    }
+}
+
+.two-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: r(20);
+    margin: slamp(r(32), r(80)) 0 0;
+
+    @include media('<xs') {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__item {
+        display: block;
+        margin: 0;
+        
+        img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 645 / 380;
+        }
+
+        figcaption {
+            margin: r(12) 0 0;
+            font-size: r(12);
+            font-weight: 500;
+            color: var(--gray-100);
+        }
+    }
+}
