@@ -1,0 +1,130 @@
+.design-page {
+    overflow: hidden;
+    
+    &__title {
+        max-width: r(1200);
+    }
+
+    &__head {
+        // margin-bottom: slamp(r(32), r(64));
+        // border-bottom: 1px solid var(--gray-100);
+        // padding-bottom: slamp(r(30), r(60));
+
+        ul {
+            margin: slamp(r(30), r(60)) 0 0;
+
+            li {
+                margin-bottom: r(40);
+                padding-bottom: r(40);
+                border-bottom: 1px solid var(--gray-100);
+            }
+
+            ul {
+                margin: slamp(r(20), r(24)) 0 0 r(20);
+                list-style: disc;
+
+                li {
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    color: var(--text-gray);
+                }
+            }
+        }
+    }
+
+    &__item {
+        margin: slamp(r(80), r(120)) 0 0;
+
+        &:first-of-type {
+            margin: 0;
+        }
+    }
+
+    &__subitem {
+        margin: slamp(r(60), r(80)) 0 0;
+    }
+
+    &__head + &__subitem {
+        margin-top: slamp(r(32), r(64));
+        border-top: 1px solid var(--gray-100);
+        padding-top: slamp(r(30), r(60));
+    }
+
+    &__text {
+        max-width: r(1085);
+        margin: slamp(r(20), r(40)) 0 0;
+
+        p {
+            margin: 0 0 r(20);
+            font-size: slamp(r(14), r(16));
+            line-height: 120%;
+            color: var(--text-gray);
+
+            strong {
+                font-size: slamp(r(16), r(24));
+                line-height: 120%;
+                color: var(--text);
+            }
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.gallery-slider {
+    position: relative;
+    margin: r(120) 0 0;
+
+    @include media('<sm') {
+        margin: slamp(r(40), r(120), $xs, $lg) 0 0;
+    }
+
+    &__items {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: auto;
+    }
+
+    &__item {
+        width: auto;
+        height: auto;
+    }
+
+    &__img {
+        display: block;
+        width: auto;
+        max-width: none;
+        height: r(282);
+        object-fit: cover;
+        cursor: pointer;
+    }
+
+    &__text {
+        display: block;
+        margin: r(12) 0 0;
+        font-size: r(12);
+        font-weight: 500;
+        color: var(--gray-100);
+    }
+
+    .arrows {
+        position: absolute;
+        top: r(-24);
+        right: 0;
+        z-index: 10;
+        transform: translateY(-100%);
+
+        @include media('<sm') {
+            position: relative;
+            transform: none;
+            top: 0;
+            margin: r(40) auto 0;
+            justify-content: center;
+        }
+    }
+}

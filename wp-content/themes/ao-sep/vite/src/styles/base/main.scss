@@ -10,6 +10,12 @@ h2.title {
     line-height: 120%;
 }
 
+h3.title {
+    font-size: slamp(r(24), r(48));
+    font-weight: 600;
+    line-height: 120%;
+}
+
 .under-title {
     position: relative;
     display: flex;
@@ -201,6 +207,11 @@ table.table {
     margin: slamp(r(40), r(56)) 0 0;
     border-collapse: collapse;
 
+    @include media('<xs') {
+        min-width: r(540);
+        max-width: r(540);
+    }
+
     &[data-table]:not(.is-table-expanded) tbody tr:nth-child(n + 6) {
         display: none;
     }
@@ -226,6 +237,28 @@ table.table {
             border-bottom: 1px solid var(--gray-100);
             font-size: slamp(r(14), r(16));
             line-height: 120%;
+        }
+
+       @include media('>=xs') {
+            &:first-of-type {
+                td {
+                    min-width: r(280);
+                }
+            }
+       }
+
+        &:last-of-type {
+            td {
+                min-width: slamp(r(120), r(140));
+            }
+        }
+
+        p {
+            margin: 0 0 r(4);
+
+            &:last-of-type {
+                margin: 0;
+            }
         }
     }
 }

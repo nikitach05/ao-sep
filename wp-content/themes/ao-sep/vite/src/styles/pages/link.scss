@@ -33,5 +33,23 @@
 
     &__btn {
         margin: r(22) auto 0;
+
+        svg {
+            @include sprite-size(r(16), r(12));
+            
+            use {
+                stroke: var(--white);
+            }
+        }
+
+        &:hover {
+            svg {
+                transform: none;
+
+                use {
+                    stroke: var(--primary);
+                }
+            }
+        }
     }
 }

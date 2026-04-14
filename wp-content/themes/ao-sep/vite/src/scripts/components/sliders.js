@@ -41,3 +41,27 @@ const hobbies = new Swiper(".hobby-slider__items", {
 		},
 	},
 });
+
+document.querySelectorAll(".gallery-slider").forEach((container) => {
+	const slider = container.querySelector(".swiper");
+	const prev = container.querySelector(".arrows__prev");
+	const next = container.querySelector(".arrows__next");
+	new Swiper(slider, {
+		modules: [Navigation],
+		slidesPerView: "auto",
+		spaceBetween: 20,
+		loop: false,
+		navigation: {
+			prevEl: prev,
+			nextEl: next,
+		},
+		breakpoints: {
+			0: {
+				spaceBetween: 10,
+			},
+			768: {
+				spaceBetween: 20,
+			},
+		},
+	});
+});
