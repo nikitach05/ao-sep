@@ -1,0 +1,130 @@
+.supervision {
+    overflow: hidden;
+
+    &__content {
+        &-block {
+            margin-bottom: slamp(r(56), r(80));
+            padding-bottom: slamp(r(56), r(80));
+            border-bottom: 1px solid var(--gray-100);
+            
+            .title {
+                margin: 0 0 slamp(r(24), r(40));
+            }
+        }
+    }
+
+    &__content-bottom, &__content {
+        ul {
+            max-width: r(780);
+            display: flex;
+            flex-direction: column;
+            gap: r(6);
+            list-style: disc;
+            margin: r(40) 0 0 r(20);
+            color: var(--text-gray);
+        }
+    
+        strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+    
+        p {
+            max-width: r(950);
+            margin: 0 0 r(24);
+            font-weight: 500;
+            font-size: slamp(r(14), r(20));
+            line-height: 120%;
+            color: var(--text-gray);
+    
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+    }
+
+    &__content-bottom {
+        .title {
+            margin-bottom: r(40);
+        }
+    }
+    
+    &__tasks {
+        padding-bottom: slamp(r(56), r(80));
+        margin-bottom: slamp(r(56), r(80));
+        border-bottom: 1px solid var(--gray-100);
+
+        &-text {
+            max-width: r(950);
+            margin: slamp(r(24), r(40)) 0 0;
+            
+            p {
+                margin: 0 0 r(20);
+                font-size: slamp(r(14), r(20));
+                font-weight: 500;
+                line-height: 120%;
+                color: var(--text-gray);
+
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+        }
+        
+        &-items {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 25%)) minmax(0, 1fr);
+            gap: slamp(r(10), r(20));
+            margin: slamp(r(40), r(56)) 0 0;
+
+            @include media('<md') {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            @include media('<xs') {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        &-item {
+            padding: r(24);
+            padding-right: r(12);
+            background: var(--gray-50);
+
+            &-icon {
+                width: r(32);
+                height: auto;
+                margin: 0 0 slamp(r(24), r(32));
+            }
+
+            &-content {
+                max-width: r(570);
+                font-weight: 500;
+                font-size: slamp(r(14), r(20));
+                line-height: 130%;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: r(2);
+                    font-size: slamp(r(14), r(16));
+                    line-height: 120%;
+                    color: var(--text-gray);
+                    margin: 0;
+                    padding: 0 0 0 r(20);
+                    list-style: disc;
+                }
+
+                p {
+                    margin: 0 0 r(20);
+                }
+            }
+
+            @include media('>=md') {
+                &:nth-child(1), &:nth-child(2) {
+                    grid-row: 1 / 3;
+                }
+            }
+        }
+    }
+}
