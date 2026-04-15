@@ -183,6 +183,12 @@ h3.title {
         line-height: 130%;
     }
 
+    &__title {
+        &--short {
+            max-width: r(900);
+        }
+    }
+
     &__text {
         max-width: slamp(r(320), r(580));
         width: 100%;
@@ -193,6 +199,10 @@ h3.title {
 
         &--wide {
             max-width: r(635);
+        }
+
+        &--full {
+            max-width: r(810);
         }
     }
 }
