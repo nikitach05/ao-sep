@@ -162,7 +162,7 @@ h3.title {
 }
 
 .head-section {
-    color: var(--white);
+    color: var(--title-color);
     background: var(--accent) url('../assets/img/svg/bg-head.svg') no-repeat center / cover;
 
     @include media('<xs') {
