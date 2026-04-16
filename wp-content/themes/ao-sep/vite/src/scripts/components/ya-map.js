@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			const balloon = {
 				iconLayout: "default#image",
 				iconImageHref: markerSrc,
-				iconImageSize: [46, 58],
-				iconImageOffset: [-23, -58],
+				iconImageSize: [100, 82],
+				iconImageOffset: [-50, -82],
 				// balloonContentSize: [302, 194],
 				// balloonLayout: "default#imageWithContent",
 				// balloonImageHref: 'img/svg/balloon.svg',
@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 					JSON.parse(coords),
 					{
 						balloonContent:
-							'<div class="balloon">Адрес: г. Москва, 4-я Гражданская улица, 36</div>',
+							'<div class="balloon">Адрес: Площадь Журавлева, д.6, Москва, Россия</div>',
 					},
-					balloon
-				)
+					balloon,
+				),
 			);
 
 			myMap.behaviors.disable("scrollZoom");

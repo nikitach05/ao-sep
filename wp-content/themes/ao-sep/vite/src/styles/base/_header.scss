@@ -141,8 +141,10 @@
         width: max-content;
         max-width: r(360);
         padding: slamp(r(16), r(24));
-        background: var(--bg);
-        box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.10);
+        backdrop-filter: blur(12.300000190734863px);
+        background: rgba(246, 246, 246, 0.1);
+        // background: var(--bg);
+        // box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.10);
         z-index: 600;
         opacity: 0;
         cursor: default;
@@ -159,16 +161,16 @@
             z-index: 650;
         }
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: r(1);
-            left: calc(50% - r(8));
-            width: r(16);
-            height: r(16);
-            background: url('../assets/img/svg/tringle.svg') no-repeat center bottom / contain;
-            transform: translateY(-100%);
-        }
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     top: r(1);
+        //     left: calc(50% - r(8));
+        //     width: r(16);
+        //     height: r(16);
+        //     background: url('../assets/img/svg/tringle.svg') no-repeat center bottom / contain;
+        //     transform: translateY(-100%);
+        // }
 
         &-item {
             margin: 0 0 r(16);
@@ -185,7 +187,8 @@
             font-weight: 500;
             font-size: r(14);
             line-height: 120%;
-            color: var(--text);
+            // color: var(--text);
+            color: var(--white);
             text-decoration: none;
             transition: .35s;
 
@@ -208,7 +211,8 @@
             transition: .35s;
 
             use {
-                fill: var(--text);
+                // fill: var(--text);
+                fill: var(--white);
             }
         }
     }
