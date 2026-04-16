@@ -141,7 +141,7 @@
         width: max-content;
         max-width: r(360);
         padding: slamp(r(16), r(24));
-        backdrop-filter: blur(12.300000190734863px);
+        backdrop-filter: blur(12.3px);
         background: rgba(246, 246, 246, 0.1);
         // background: var(--bg);
         // box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.10);
@@ -193,14 +193,15 @@
             transition: .35s;
 
             &:hover {
-                color: var(--primary);
+                // color: var(--primary);
+                opacity: .5;
 
                 svg {
                     transform: translateX(r(3));
                     
-                    use {
-                        fill: var(--primary);
-                    }
+                    // use {
+                    //     fill: var(--primary);
+                    // }
                 }
             }
         }

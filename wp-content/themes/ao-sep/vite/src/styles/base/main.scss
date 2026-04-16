@@ -1,7 +1,7 @@
 h1.title {
     font-size: slamp(r(40), r(80));
     font-weight: 600;
-    line-height: 120%;
+    line-height: 110%;
 }
 
 h2.title {
@@ -177,10 +177,10 @@ h3.title {
     }
 
     &__subtitle {
-        margin: slamp(r(24), r(40)) 0 0;
+        margin: slamp(r(16), r(24)) 0 0;
         font-weight: 600;
         font-size: slamp(r(24), r(40));
-        line-height: 130%;
+        line-height: 120%;
     }
 
     &__title {
@@ -192,7 +192,7 @@ h3.title {
     &__text {
         max-width: slamp(r(320), r(580));
         width: 100%;
-        margin: slamp(r(40), r(56)) 0 0;
+        margin: slamp(r(32), r(40)) 0 0;
         font-weight: 500;
         font-size: slamp(r(14), r(16));
         line-height: 140%;

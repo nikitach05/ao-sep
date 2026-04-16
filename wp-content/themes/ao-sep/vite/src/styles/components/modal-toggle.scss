@@ -3,10 +3,19 @@
     width: max-content;
     cursor: pointer;
 
+    &:hover {
+        .modal-toggle {
+            &__button {
+                opacity: .5;
+            }
+        }
+    }
+
     &__button {
         display: flex;
         align-items: center;
         gap: .5rem;
+        transition: .35s;
     }
 
     &__label {
@@ -35,8 +44,10 @@
         z-index: 600;
         opacity: 0;
         cursor: default;
-        background: var(--white);
-        box-shadow: var(--box-shadow);
+        // background: var(--white);
+        // box-shadow: var(--box-shadow);
+        backdrop-filter: blur(12.3px);
+        background: rgba(246, 246, 246, 0.1);
         transition: opacity .3s;
         transform: scaleY(0);
 
@@ -59,11 +70,11 @@
             width: max-content;
             margin: 0 0 r(12);
             cursor: pointer;
-            color: var(--text);
+            color: var(--white);
             transition: .35s;
 
             &:hover {
-                color: var(--primary);
+                opacity: .5;
             }
 
             &:last-of-type {
