@@ -1,0 +1,77 @@
+{% set title = "Заказчики и партнёры" %}
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="head-section pb-indent">
+    <div class="head-section__container container">
+        <h1 class="head-section__title title">Заказчики и партнёры</h1>
+        <div class="head-section__text">Наши клиенты – крупнейшие российские и зарубежные компании – лидеры энергетической отрасли</div>
+    </div>
+</section>
+
+<section class="partners-page m-indent">
+    <div class="container">
+        <h2 class="partners-page__title title">Международное сотрудничество и партнёры</h2>
+        <div class="partners-page__text">Мы выстроили долгосрочные партнёрские отношения с ведущими лидерами в области распределения электроэнергии</div>
+
+        <div class="partners-page__items">
+            {% for item in range(20) %}
+            <div class="partners-page__item">
+                <img class="partners-page__item-img" src="/src/assets/img/partner1.webp" loading="lazy" alt="Logo">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="letters m-indent">
+    <div class="container">
+        <h2 class="letters__title title">Благодарственные письма</h2>
+        <div class="letters__text">Нажмите, чтобы увеличить</div>
+
+        <div class="letters__slider letters-slider">
+            <div class="swiper letters-slider__items">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide letters-slider__item">
+                        <img class="letters-slider__img" src="/src/assets/img/letter1.webp" data-fancybox="letters" loading="lazy" alt="Image">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide letters-slider__item">
+                        <img class="letters-slider__img" src="/src/assets/img/letter2.webp" data-fancybox="letters" loading="lazy" alt="Image">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide letters-slider__item">
+                        <img class="letters-slider__img" src="/src/assets/img/letter3.webp" data-fancybox="letters" loading="lazy" alt="Image">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide letters-slider__item">
+                        <img class="letters-slider__img" src="/src/assets/img/letter4.webp" data-fancybox="letters" loading="lazy" alt="Image">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide letters-slider__item">
+                        <img class="letters-slider__img" src="/src/assets/img/letter3.webp" data-fancybox="letters" loading="lazy" alt="Image">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div class="swiper-slide letters-slider__item">
+                        <img class="letters-slider__img" src="/src/assets/img/letter4.webp" data-fancybox="letters" loading="lazy" alt="Image">
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="arrows">
+                <div class="letters__arrow-prev arrows__prev">
+                    <svg>
+                        <use href="/src/assets/img/svg-sprite/sprite.svg#long-arrow"></use>
+                    </svg>
+                </div>
+                <div class="letters__arrow-next arrows__next">
+                    <svg>
+                        <use href="/src/assets/img/svg-sprite/sprite.svg#long-arrow"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% set title = "Контакты" %}
+{% extends "layouts/main.njk" %}
+
+{% block content %}
+<section class="head-section pb-indent">
+    <div class="head-section__container container">
+        <h1 class="head-section__title title">Контакты</h1>
+        <!-- <div class="head-section__text"></div> -->
+    </div>
+</section>
+
+<section class="contacts-page m-indent">
+    <div class="container">
+        <div class="contacts-page__inner">
+            <div class="contacts-page__content">
+                <div class="contacts-page__group">
+                    <div class="contacts-page__label">Телефон:</div>
+                    <a class="contacts-page__link" href="tel:+7 (495) 968-20-10">+7 (495) 968-20-10</a>
+                    <a class="contacts-page__link" href="tel:+7 (495) 968-20-10">+7 (495) 968-20-10</a>
+                </div>
+
+                <div class="contacts-page__group">
+                    <div class="contacts-page__label">Почта:</div>
+                    <a class="contacts-page__link" href="mailto:Info@sepro.ru">Info@sepro.ru</a>
+                </div>
+
+                <div class="contacts-page__group">
+                    <div class="contacts-page__label">Юридический адрес:</div>
+                    <div class="contacts-page__value">Аллея Первой Маёвки, д.11, к.1, Москва, Россия</div>
+                </div>
+
+                <div class="contacts-page__group">
+                    <div class="contacts-page__label">Фактический адрес:</div>
+                    <div class="contacts-page__value">Площадь Журавлева, д.6, Москва, Россия</div>
+                </div>
+
+                <div class="contacts-page__group">
+                    <div class="contacts-page__label">Режим работы:</div>
+                    <div class="contacts-page__value">ежедневно 9:00-18:00</div>
+                </div>
+            </div>
+
+            <div class="contacts-page__map-box">
+                <div class="contacts-page__map" id="map" data-coords="[55.78363,37.703739]" data-coords-center="[55.78363,37.703739]" data-marker="/src/assets/img/svg/marker.svg"></div>
+                <a class="contacts-page__btn-route btn btn--primary" href="#" target="_blank">
+                    <span>Построить маршрут</span>
+                    <svg><use href="/src/assets/img/svg-sprite/sprite.svg#long-arrow"></use></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="contacts-page__img-box">
+            <div class="contacts-page__loc-info">
+                <svg><use href="/src/assets/img/svg-sprite/sprite.svg#loc"></use></svg>
+                <span>Дом купцов Шелаевых</span>
+            </div>
+            <img class="contacts-page__img" src="/src/assets/img/image32.webp" loading="lazy" alt="Image">
+        </div>
+    </div>
+</section>
+{% endblock %}

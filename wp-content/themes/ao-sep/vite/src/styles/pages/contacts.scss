@@ -1,0 +1,116 @@
+.contacts-page {
+    &__inner {
+        display: grid;
+        grid-template-columns: r(420) minmax(0, 1fr);
+
+        @include media('<md') {
+            grid-template-columns: r(360) minmax(0, 1fr);
+        }
+
+        @include media('<sm') {
+            grid-template-columns: minmax(0, 1fr);
+            gap: r(40);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: r(40);
+        padding: r(40) slamp(r(24), r(40));
+        background: var(--white);
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: r(12);
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: slamp(r(14), r(16));
+        line-height: 100%;
+        color: var(--text-gray);
+    }
+
+    &__link {
+        display: block;
+        width: max-content;
+        line-height: 100%;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: slamp(r(24), r(32));
+        line-height: 100%;
+        color: var(--primary);
+        transition: .3s;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    &__value {
+        font-weight: 600;
+        font-size: slamp(r(16), r(20));
+        line-height: 120%;
+    }
+
+    &__map {
+        width: 100%;
+        height: 100%;
+        min-height: r(580);
+
+        @include media('<sm') {
+            min-height: r(360);
+        }
+
+        &-box {
+            position: relative;
+            height: 100%;
+        }
+    }
+
+    &__btn-route {
+        position: absolute;
+        bottom: slamp(r(16), r(40));
+        right: slamp(r(16), r(40));
+        z-index: 10;
+    }
+    
+    &__img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+
+        &-box {
+            position: relative;
+            margin: slamp(r(40), r(56)) 0 0;
+        }
+    }
+
+    &__loc-info {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: r(10);
+        padding: r(14) r(16);
+        top: slamp(r(16), r(40));
+        left: slamp(r(16), r(40));
+        background: var(--white);
+
+        svg {
+            @include sprite-size(r(14), r(16));
+
+            use {
+                fill: var(--text);
+            }
+        }
+
+        span {
+            font-weight: 500;
+            font-size: slamp(r(14), r(20));
+            line-height: 100%;
+        }
+    }
+}
