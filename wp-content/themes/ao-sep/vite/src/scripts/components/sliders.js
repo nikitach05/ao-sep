@@ -65,3 +65,27 @@ document.querySelectorAll(".gallery-slider").forEach((container) => {
 		},
 	});
 });
+
+const letters = new Swiper(".letters-slider__items", {
+	modules: [Navigation],
+	slidesPerView: 4,
+	spaceBetween: 20,
+	loop: false,
+	navigation: {
+		prevEl: ".letters__arrow-prev",
+		nextEl: ".letters__arrow-next",
+	},
+	breakpoints: {
+		0: {
+			spaceBetween: 10,
+			slidesPerView: 2,
+		},
+		768: {
+			spaceBetween: 20,
+			slidesPerView: 3,
+		},
+		1280: {
+			slidesPerView: 4,
+		},
+	},
+});
