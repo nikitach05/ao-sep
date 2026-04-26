@@ -21,9 +21,9 @@
     position: relative;
     margin: slamp(r(40), r(80)) 0 0;
 
-    &__items {
-        overflow: visible;
-    }
+    // &__items {
+    //     overflow: visible;
+    // }
 
     .swiper-slide {
         width: auto;
@@ -36,8 +36,8 @@
 
     &__img {
         display: block;
-        width: auto;
-        max-width: none;
+        width: 100%;
+        max-width: 100%;
         height: r(282);
         object-fit: cover;
     }

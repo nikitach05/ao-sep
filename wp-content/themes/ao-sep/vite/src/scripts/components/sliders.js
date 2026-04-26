@@ -25,7 +25,7 @@ const partners = new Swiper(".partners-slider", {
 
 const hobbies = new Swiper(".hobby-slider__items", {
 	modules: [Navigation],
-	slidesPerView: "auto",
+	slidesPerView: 3,
 	spaceBetween: 20,
 	loop: false,
 	navigation: {
@@ -48,7 +48,7 @@ document.querySelectorAll(".gallery-slider").forEach((container) => {
 	const next = container.querySelector(".arrows__next");
 	new Swiper(slider, {
 		modules: [Navigation],
-		slidesPerView: "auto",
+		slidesPerView: 3,
 		spaceBetween: 20,
 		loop: false,
 		navigation: {

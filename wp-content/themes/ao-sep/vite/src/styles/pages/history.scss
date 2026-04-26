@@ -236,6 +236,14 @@
         justify-content: space-between;
         gap: r(24);
     }
+
+    @include media('<xxs') {
+        figure {
+           img {
+            max-height: r(300);
+           }
+        }
+    }
 }
 
 .history-block-2 {
@@ -335,50 +343,60 @@
     &::after {
         content: '';
         position: absolute;
-        bottom: 0;
-        right: 0;
+        top: r(-24);
+        right: r(100);
         width: slamp(r(230), r(360));
         height: slamp(r(230), r(360));
         background: url('../assets/img/svg/bg3.svg') no-repeat 100% / contain;
         pointer-events: none;
         z-index: -1;
 
-        @include media('<xxs') {
-            top: r(-50);
+        @include media('<sm') {
+            top: r(-80);
             right: r(-15);
-            bottom: auto;
         }
     }
     
-    &__row {
-        display: flex;
-        align-items: flex-start;
-        gap: r(24);
-
-        @include media('<md') {
-            flex-direction: column;
-        }
-    }
+    // &__row {
+    // }
 
     &__content {
         max-width: r(650);
         width: 100%;
     }
 
-    &__img {
-        width: 100%;
-        height: auto;
+    // &__img {
+    //     width: 100%;
+    //     height: auto;
 
-        &-box {
-            flex-shrink: 0;
-            max-width: r(220);
-            cursor: pointer;
-        }
-    }
+    //     &-box {
+    //         flex-shrink: 0;
+    //         max-width: r(220);
+    //         cursor: pointer;
+    //     }
+    // }
 
     &__text {
         max-width: r(535);
         margin: slamp(r(24), r(40)) 0 0;
+    }
+
+    &__licenses {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: slamp(r(10), r(20));
+        margin: slamp(r(32), r(56)) 0 0;
+
+        @include media('<sm') {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        &-img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
     }
 }
 
@@ -429,6 +447,14 @@
             width: 100%;
         }
     }
+
+    @include media('<sm') {
+        figure {
+            img {
+                max-height: r(320);
+            }
+        }
+    }
 }
 
 .history-block-5 {
@@ -437,21 +463,26 @@
     &::after {
         content: '';
         position: absolute;
-        top: r(-80);
-        right: r(120);
-        width: slamp(r(230), r(390));
-        height: slamp(r(230), r(390));
-        background: url('../assets/img/svg/bg5.svg') no-repeat 100% / contain;
+        top: r(-130);
+        right: r(160);
+        width: slamp(r(330), r(526));
+        height: slamp(r(330), r(526));
+        background: url('../assets/img/svg/bg4.svg') no-repeat 100% / contain;
         pointer-events: none;
         z-index: -1;
 
-        @include media('<xs') {
-            right: 0;
+        @include media('<sm') {
+            right: r(-50);
         }
     }
     
     &__title {
         max-width: slamp(r(360), r(730));
+    }
+    
+    &__text {
+        max-width: r(590);
+        margin: r(40) 0 0;
     }
     
     &__row {
@@ -462,12 +493,6 @@
 
         @include media('<xs') {
             grid-template-columns: minmax(0, 1fr);
-        }
-    }
-
-    &__text.second {
-        @include media('<xs') {
-            order: 10;
         }
     }
 
@@ -497,6 +522,34 @@
                     }
                 }
             }
+        }
+    }
+
+    &__quote {
+        position: relative;
+        margin: slamp(r(50), r(100)) 0 0;
+        padding-left: slamp(r(24), r(68));
+        font-size: slamp(r(16), r(32));
+        line-height: 130%;
+        color: var(--text-gray);
+
+        p {
+            margin: 0 0 r(20);
+
+            &:last-of-type {
+                margin: 0;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: calc(slamp(r(34), r(51)) * -1);
+            left: 0;
+            width: slamp(r(88), r(148));
+            height: slamp(r(66), r(111));
+            background: url('../assets/img/svg/quote.svg') no-repeat center / contain;
+            z-index: -1;
         }
     }
 }

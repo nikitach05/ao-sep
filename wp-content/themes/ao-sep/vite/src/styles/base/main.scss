@@ -173,7 +173,7 @@ h3.title {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        min-height: r(600);
+        min-height: calc(r(600) - slamp($min-indent, $max-indent));
     }
 
     &__subtitle {

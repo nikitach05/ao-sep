@@ -82,22 +82,23 @@
         margin: slamp(r(40), r(120), $xs, $lg) 0 0;
     }
 
-    &__items {
-        overflow: visible;
-    }
+    // &__items {
+    //     overflow: visible;
+    // }
 
     .swiper-slide {
         width: auto;
     }
 
     &__item {
-        width: auto;
+        // width: auto;
         height: auto;
     }
 
     &__img {
         display: block;
-        width: auto;
+        max-width: 100%;
+        width: 100%;
         max-width: none;
         height: r(282);
         object-fit: cover;

@@ -2,7 +2,8 @@
 	<div class="container">
 		<div class="header__content">
 			<a href="/" class="header__logo logo">
-				<img src="/src/assets/img/svg/logo.svg" alt="Logo">
+				<img class="logo__img" src="/src/assets/img/svg/logo.svg" alt="Logo">
+				<span class="logo__slogan">Акционерное общество Сельэнергопроект</span>
 			</a>
 
 			<ul class="header__menu menu">
@@ -10,17 +11,17 @@
 				{% if li.submenu.length > 0 %}
 				<li class="menu__item menu__item--has-submenu">
 					<span class="menu__link">{{li.item}}</span>
-					<svg class="menu__arrow">
+					<!-- <svg class="menu__arrow">
 						<use href="/src/assets/img/svg-sprite/sprite.svg#plus"></use>
-					</svg>
+					</svg> -->
 					<ul class="menu__submenu">
 						{% for subli in li.submenu %}
 						<li class="menu__submenu-item">
 							<a class="menu__submenu-link" href="#">
 								{{subli}}
-								<svg class="menu__submenu-arrow">
+								<!-- <svg class="menu__submenu-arrow">
 									<use href="/src/assets/img/svg-sprite/sprite.svg#arrow-right"></use>
-								</svg>
+								</svg> -->
 							</a>
 						</li>
 						{% endfor %}
@@ -42,7 +43,7 @@
 
 			<div class="modal-toggle header__langs">
 				<div class="modal-toggle__button">
-					<div class="modal-toggle__label">RU +</div>
+					<div class="modal-toggle__label">RU</div>
 				</div>
 				<div class="modal-toggle__modal">
 					<ul class="modal-toggle__list">
