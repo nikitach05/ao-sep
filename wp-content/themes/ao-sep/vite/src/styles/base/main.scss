@@ -117,6 +117,7 @@ h3.title {
         cursor: pointer;
         background: var(--primary);
         box-shadow: 1px 1px 10px rgba(0, 0, 0, .05);
+        user-select: none;
         transition: .35s;
 
         svg {
@@ -134,25 +135,19 @@ h3.title {
 
         &.swiper-button-disabled {
             opacity: .7;
-            pointer-events: none;
+            cursor: default;
+            // pointer-events: none;
             background: var(--gray);
         }
 
         @include media('>=xs') {
-            &:hover:not(.disable) {
+            &:hover:not(&.swiper-button-disabled) {
                 background: var(--white);
         
                 svg use {
                     fill: var(--primary);
                 }
             }
-        }
-
-        &.disable {
-            pointer-events: none;
-            background: var(--gray);
-            opacity: .6;
-            cursor: default;
         }
     }
 

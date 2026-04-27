@@ -25,6 +25,10 @@
     //     overflow: visible;
     // }
 
+    &__btn {
+        margin: slamp(r(24), r(32)) auto 0;
+    }
+
     .swiper-slide {
         width: auto;
     }

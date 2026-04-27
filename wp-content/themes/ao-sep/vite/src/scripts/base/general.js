@@ -109,4 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
 			);
 		});
 	});
+
+	// Gallery buttons
+	const galleryButtons = document.querySelectorAll("[data-gallery]");
+	galleryButtons.forEach(button => {
+		button.addEventListener("click", (e) => {
+			e.preventDefault();
+			const firstImage = document.querySelector(`[data-fancybox="${button.dataset.gallery}"]`);
+			if (firstImage) {
+				firstImage.click();
+			}
+		});
+	});
 });

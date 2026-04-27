@@ -9,11 +9,11 @@ const partners = new Swiper(".partners-slider", {
 	loop: false,
 	breakpoints: {
 		0: {
-			slidesPerView: 2.3,
+			slidesPerView: 2,
 			spaceBetween: 10,
 		},
 		768: {
-			slidesPerView: 3.3,
+			slidesPerView: 3,
 			spaceBetween: 20,
 		},
 		1280: {

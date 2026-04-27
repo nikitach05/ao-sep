@@ -336,19 +336,12 @@
     }
 
     &__btn {
+        display: flex;
         flex-shrink: 0;
+        margin: slamp(r(24), r(32)) auto 0;
         
         @include media('<sm') {
             display: none;
-        }
-    }
-
-    &__btn-mobile {
-        display: none;
-        margin-top: r(24);
-
-        @include media('<sm') {
-            display: flex;
         }
     }
 
@@ -358,8 +351,6 @@
 }
 
 .partners-slider {
-    overflow: visible;
-    
     &__item.swiper-slide {
         display: flex;
         align-items: center;

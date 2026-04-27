@@ -82,6 +82,10 @@
         margin: slamp(r(40), r(120), $xs, $lg) 0 0;
     }
 
+    &__btn {
+        margin: slamp(r(24), r(32)) auto 0;
+    }
+
     // &__items {
     //     overflow: visible;
     // }
