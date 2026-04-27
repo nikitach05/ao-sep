@@ -339,14 +339,27 @@
         display: flex;
         flex-shrink: 0;
         margin: slamp(r(24), r(32)) auto 0;
-        
-        @include media('<sm') {
-            display: none;
-        }
     }
 
     &__slider {
+        position: relative;
         margin: slamp(r(40), r(56)) 0 0;
+    }
+
+    .arrows {
+        position: absolute;
+        top: r(-24);
+        right: 0;
+        z-index: 10;
+        transform: translateY(-100%);
+
+        @include media('<sm') {
+            position: relative;
+            transform: none;
+            top: 0;
+            margin: r(40) auto 0;
+            justify-content: center;
+        }
     }
 }
 

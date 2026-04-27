@@ -7,6 +7,10 @@ const partners = new Swiper(".partners-slider", {
 	slidesPerView: 4,
 	spaceBetween: 20,
 	loop: false,
+	navigation: {
+		prevEl: ".partners__arrow-prev",
+		nextEl: ".partners__arrow-next",
+	},
 	breakpoints: {
 		0: {
 			slidesPerView: 2,
